@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles"
+import { ThemeProvider, createTheme } from "@material-ui/core/styles"
 import { useMediaQuery, Box } from "@material-ui/core"
 // import { theme } from "./Theme"
 import Footer from "./components/Footer/Footer"
@@ -41,7 +41,7 @@ function App() {
 
   // console.log("current state =", themeStatus)
 
-  const lightTheme = createMuiTheme({
+  const lightTheme = createTheme({
     palette: {
       type: "light",
       primary: {
@@ -52,7 +52,7 @@ function App() {
       }
     }
   })
-  const darkTheme = createMuiTheme({
+  const darkTheme = createTheme({
     palette: {
       type: "dark",
       primary: {

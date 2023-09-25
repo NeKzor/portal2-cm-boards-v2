@@ -9,19 +9,6 @@ import { ThemeContext } from "../../../App.js"
 
 const ENDPOINT = "http://localhost:8080/api/v1/changelog"
 
-/**
- * @name - ChangeLog
- * @desc - ChangeLog page for the website.
- *          TODO:
- *                - Add graph of upload activity
- *                - Display list of upload activity
- *                - Display options for filter
- * @author - Mitchell Baker
- * @date - 3/17/21
- * @version - 1.0
- * @param -
- * @return -
- */
 const ChangeLog = () => {
   const classes = useStyles()
   const themeContext = useContext(ThemeContext)
@@ -45,11 +32,10 @@ const ChangeLog = () => {
     setFilters(e)
   }
 
-  console.log(filters)
-
   return (
     <Paper id='ChangeLog' className={classes.bodyPage}>
       <Grid container direction='column'>
+
         <Grid item style={{ paddingRight: "2em", paddingTop: "2em" }}>
           <Filters
             themeStatus={themeContext.themeStatus}
@@ -57,6 +43,7 @@ const ChangeLog = () => {
             onChangeFilters={handleChangeFilters}
           />
         </Grid>
+
         <Grid item>
           <Graph
             themeContext={themeContext}
@@ -64,6 +51,7 @@ const ChangeLog = () => {
             changelogData={changelogData}
           />
         </Grid>
+
         <Grid item>
           <ScoreLists
             filters={filters}

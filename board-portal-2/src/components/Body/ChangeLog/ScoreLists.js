@@ -13,13 +13,12 @@ import React, { isValidElement } from "react"
 import { useStyles } from "./style"
 import chapters from "./Chapters"
 
-const ScoreLists = props => {
+function ScoreLists(props) {
   const classes = useStyles()
   var index = 0
-
-  console.log(props.changelogData)
-  console.log(props.filters)
-
+  var theme = props.theme
+  var changelogData = props.changelogData
+  var themeStatus = props.themeStatus
   return (
     <List dense={true} style={{ paddingRight: "2em", width: "100%" }}>
       <ListItem>
@@ -36,22 +35,22 @@ const ScoreLists = props => {
         <ListItemSecondaryAction></ListItemSecondaryAction>
       </ListItem>
 
-      {props.changelogData.map(submission => {
+      {changelogData.map(submission => {
         var mapID = JSON.parse(submission.map_id)
         index++
         return (
           <ListItem
+            key={index}
             style={{
-              // hella not optimized but it works to alternate the color
               backgroundColor:
                 index % 2 == 0
-                  ? props.theme.palette.background.paper
-                  : props.themeStatus
-                  ? "rgb(154, 166, 187)"
-                  : "rgb(41, 49, 62)"
+                  ? theme.palette.background.paper
+                  : themeStatus
+                    ? "rgb(154, 166, 187)"
+                    : "rgb(41, 49, 62)"
             }}>
             <ListItemText
-              primary={submission.time_gained}
+              primary={new Date(submission.timestamp).toLocaleString()}
               className={classes.cellDate}
             />
             <ListItemAvatar>
@@ -60,31 +59,38 @@ const ScoreLists = props => {
             <ListItemText
               className={classes.cellPlayer}
               primary={
-                submission.boardname
-                  ? submission.boardname
-                  : submission.steamname
+                submission.user_name
+                  ? submission.user_name
+                  : submission.profile_number
               }
             />
             <ListItemText
               className={classes.cellMap}
-              {...console.log(index)}
-              primary={mapID != 47848 ? chapters[mapID].title : "DNE"}
+              primary={mapID != 47847 ? chapters[mapID].title : "DNE"}
             />
             <ListItemText
               className={classes.cellChapter}
               primary={submission.name}
             />
+            <ListItemText 
+              className={classes.cellPR}
+              primary={submission.post_rank ? submission.post_rank : "-"}
+            />
             <ListItemText
               className={classes.cellPS}
-              primary={submission.pre_rank ? submission.pre_rank : 0}
+              primary={submission.score ? submission.score : "-"} 
+            />
+            <ListItemText 
+              className={classes.cellNR}
+              primary={submission.post_rank ? submission.post_rank : "-"}
             />
             <ListItemText
               className={classes.cellNS}
-              primary={submission.post_rank}
+              primary={submission.score ? submission.score : "-"}
             />
             <ListItemText
               className={classes.cellImprovement}
-              primary={submission.post_rank - submission.pre_rank}
+              primary={submission.pre_rank ? submission.post_rank - submission.pre_rank : "-"}
             />
             <ListItemSecondaryAction>
               {submission.note && (
@@ -92,7 +98,7 @@ const ScoreLists = props => {
                   <ChatBubble />
                 </IconButton>
               )}
-              {submission.has_demo != 0 && (
+              {submission.has_demo != -1 && (
                 <IconButton edge='end'>
                   <GetApp />
                 </IconButton>

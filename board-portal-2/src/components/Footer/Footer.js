@@ -21,10 +21,10 @@ import { useStyles, CustomButton } from "./style.js"
 const Footer = () => {
   const classes = useStyles()
   return (
-    <div id='container-footer' className='container' className={classes.root}>
+    <div id='container-footer' className='container'>
       <AppBar color='secondary' position='static'>
         <Toolbar className={classes.toolbar}>
-          <Grid container justify='space-around' alignContent='center'>
+          <Grid container justifyContent='space-around' alignContent='center'>
             <BrowserRouter>
               <CustomButton href='/donators'>
                 <img src={donatorsIcon} className={classes.icon} />

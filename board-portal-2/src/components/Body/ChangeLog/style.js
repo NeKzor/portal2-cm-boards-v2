@@ -20,10 +20,16 @@ export const useStyles = makeStyles(theme => ({
     width: "7.5em"
   },
   cellChapter: {
-    width: "7.5em"
+    width: "10.5em"
+  },
+  cellPR: {
+    width: "3.5em",
   },
   cellPS: {
-    width: "7.5em"
+    width: "7.5em",
+  },
+  cellNR: {
+    width: "5.5em",
   },
   cellNS: {
     width: "7.5em"
