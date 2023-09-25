@@ -5,6 +5,7 @@ sudo apt install postgresql -y
 sudo apt install postgresql-client -y
 sudo service postgresql start
 sudo -u postgres psql template1
+sudo apt install pkg-config -y
 CREATE USER ubuntu;
 ALTER USER ubuntu with encrypted password '123'; ALTER USER ubuntu WITH SUPERUSER;
 \q
