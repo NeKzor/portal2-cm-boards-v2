@@ -7,16 +7,6 @@ import imagePaths from "./ChamberImages";
 
 const ENDPOINT = "http://localhost:8080/api/v1/sp";
 
-/**
- * @name - App
- * @desc -
- * @author - John Fiedler
- * @date - 3/17/21
- * @version - 1.0
- * @param -
- * @return -
- */
-
 function SinglePlayer() {
   const classes = useStyles();
   const [levelData, setLevelData] = useState([]);
@@ -62,10 +52,11 @@ function SinglePlayer() {
         className={classes.chapter_container}
       >
         {levelData.slice(0, 9).map((level) => {
+          console.log(level)
           return (
             <Grid key={level.map_name} item>
               <ChamberCard
-                level_id={level.scores[0].map_id}
+                level_id={level.map_id}
                 scores={level.scores}
                 image={imagePaths[level.scores[0].map_id]}
                 title={level.map_name}

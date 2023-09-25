@@ -29,7 +29,7 @@ export const useStyles = makeStyles(theme => ({
     width: "7.5em",
   },
   cellNR: {
-    width: "5.5em",
+    width: "3.5em",
   },
   cellNS: {
     width: "7.5em"

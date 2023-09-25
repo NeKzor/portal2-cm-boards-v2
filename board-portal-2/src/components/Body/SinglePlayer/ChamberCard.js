@@ -25,7 +25,7 @@ function ChamberCard(props) {
       <div className={classes.level_title_helper}></div>
       <div className={classes.level_title}>{props.title}</div>
       <CardContent className={classes.first_place}>
-        <Grid container direction="row" justify="space-between">
+        <Grid container direction="row" justifyContent="space-between">
           <Typography variant="body2">
             {props.scores[0].user_name}
           </Typography>
@@ -39,7 +39,7 @@ function ChamberCard(props) {
               key={score.score + score.steamname}
               className={classes.card_content}
             >
-              <Grid container direction="row" justify="space-between">
+              <Grid container direction="row" justifyContent="space-between">
                 <Typography variant="caption">
                   {score.user_name}
                 </Typography>
