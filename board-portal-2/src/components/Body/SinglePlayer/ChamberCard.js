@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 
 function ChamberCard({data, image, title}) {
   const classes = useStyles();
-  console.log(data, image, title)
   return (
     <Card className={classes.chamber_card}>
       <CardActionArea>

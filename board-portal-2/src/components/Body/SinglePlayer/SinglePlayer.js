@@ -3,7 +3,6 @@ import { useStyles } from "./style";
 import Grid from "@material-ui/core/Grid";
 import ChamberCard from "./ChamberCard";
 import Typography from "@material-ui/core/Typography";
-import imagePaths from "./ChamberImages";
 import Sections from "./Chapters.js"
 
 const ENDPOINT = "http://localhost:8080/api/v1/sp";
@@ -55,7 +54,6 @@ function SinglePlayer() {
               className={classes.chapter_container}
             >
               {Sections[chapter].map((level) => {
-               console.log(level) 
                 if (levelData.length > 0) {
                   return (
                     <Grid item key={level.id}>

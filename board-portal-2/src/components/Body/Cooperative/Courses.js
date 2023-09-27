@@ -77,9 +77,9 @@ const courses = {
   ],
   course_3: [
     {
-      id: 47849,
+      id: 47848,
       title: "Cooperative Bridges",
-      image: imagePaths[47849],
+      image: imagePaths[47848],
     },
     {
       id: 47849,
