@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import ChamberCard from "./ChamberCard";
 import Typography from "@material-ui/core/Typography";
 import imagePaths from "./ChamberImages";
+import Sections from "./Chapters.js"
 
 const ENDPOINT = "http://localhost:8080/api/v1/sp";
 
@@ -22,347 +23,58 @@ function SinglePlayer() {
         console.log(error);
       }
     };
-
-    fetchData();
+    fetchData()
   }, []);
 
+  let dataIndex = {}
+  levelData.forEach((value,index) => {dataIndex[value[0].map_id] = index });
   return (
     <div>
-      {/*---------------Chapter 01------------------*/}
-      <div className={classes.chapter_title_container}>
-        <Typography
-          variant="h6"
-          component="h1"
-          className={classes.chapter_number}
-        >
-          Chapter 01
-        </Typography>
-        <Typography
-          variant="h4"
-          component="h1"
-          className={classes.chapter_name}
-        >
-          THE COURTESY CALL
-        </Typography>
-      </div>
-      <Grid
-        container
-        spacing={2}
-        direction="row"
-        className={classes.chapter_container}
-      >
-        {levelData.slice(0, 9).map((level) => {
-          console.log(level)
-          return (
-            <Grid key={level.map_name} item>
-              <ChamberCard
-                level_id={level.map_id}
-                scores={level.scores}
-                image={imagePaths[level.scores[0].map_id]}
-                title={level.map_name}
-              />
+      {Object.keys(Sections).map((chapter) => {
+        let trueChapterName = (chapter.charAt(0).toUpperCase() + chapter.slice(1).replace("_", " "));
+        return (
+          <div key={chapter} className={classes.chapter_title_container}>
+            <Typography
+              variant="h6"
+              component="h1"
+              className={classes.chapter_number}
+            >
+              {trueChapterName}
+            </Typography>
+            <Typography
+              variant="h4"
+              component="h1"
+              className={classes.chapter_name}
+            >
+              {Sections[chapter][0].chapter_name}
+            </Typography>
+            <Grid
+              container
+              spacing={2}
+              direction="row"
+              className={classes.chapter_container}
+            >
+              {Sections[chapter].map((level) => {
+               console.log(level) 
+                if (levelData.length > 0) {
+                  return (
+                    <Grid item key={level.id}>
+                      <ChamberCard
+                        data={levelData[dataIndex[level.id]]}
+                        image={level.image}
+                        title={level.title}
+                      />
+                    </Grid>
+                  );
+                }
+              })}
             </Grid>
-          );
-        })}
-      </Grid>
-
-      {/*---------------Chapter 02------------------*/}
-      <div className={classes.chapter_title_container}>
-        <Typography
-          variant="h6"
-          component="h1"
-          className={classes.chapter_number}
-        >
-          Chapter 02
-        </Typography>
-        <Typography
-          variant="h4"
-          component="h1"
-          className={classes.chapter_name}
-        >
-          THE COLD BOOT
-        </Typography>
-      </div>
-      <Grid
-        container
-        spacing={2}
-        direction="row"
-        className={classes.chapter_container}
-      >
-        {levelData.slice(9, 17).map((level) => {
-          return (
-            <Grid key={level.map_name} item>
-              <ChamberCard
-                level_id={level.scores[0].map_id}
-                scores={level.scores}
-                image={imagePaths[level.scores[0].map_id]}
-                title={level.map_name}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
-
-      {/*---------------Chapter 03------------------*/}
-      <div className={classes.chapter_title_container}>
-        <Typography
-          variant="h6"
-          component="h1"
-          className={classes.chapter_number}
-        >
-          Chapter 03
-        </Typography>
-        <Typography
-          variant="h4"
-          component="h1"
-          className={classes.chapter_name}
-        >
-          THE RETURN
-        </Typography>
-      </div>
-      <Grid
-        container
-        spacing={2}
-        direction="row"
-        className={classes.chapter_container}
-      >
-        {levelData.slice(17, 26).map((level) => {
-          return (
-            <Grid key={level.map_name} item>
-              <ChamberCard
-                level_id={level.scores[0].map_id}
-                scores={level.scores}
-                image={imagePaths[level.scores[0].map_id]}
-                title={level.map_name}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
-
-      {/*---------------Chapter 04------------------*/}
-      <div className={classes.chapter_title_container}>
-        <Typography
-          variant="h6"
-          component="h1"
-          className={classes.chapter_number}
-        >
-          Chapter 04
-        </Typography>
-        <Typography
-          variant="h4"
-          component="h1"
-          className={classes.chapter_name}
-        >
-          THE SURPRISE
-        </Typography>
-      </div>
-      <Grid
-        container
-        spacing={2}
-        direction="row"
-        className={classes.chapter_container}
-      >
-        {levelData.slice(26, 31).map((level) => {
-          return (
-            <Grid key={level.map_name} item>
-              <ChamberCard
-                level_id={level.scores[0].map_id}
-                scores={level.scores}
-                image={imagePaths[level.scores[0].map_id]}
-                title={level.map_name}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
-
-      {/*---------------Chapter 05------------------*/}
-      <div className={classes.chapter_title_container}>
-        <Typography
-          variant="h6"
-          component="h1"
-          className={classes.chapter_number}
-        >
-          Chapter 05
-        </Typography>
-        <Typography
-          variant="h4"
-          component="h1"
-          className={classes.chapter_name}
-        >
-          THE ESCAPE
-        </Typography>
-      </div>
-      <Grid
-        container
-        spacing={2}
-        direction="row"
-        className={classes.chapter_container}
-      >
-        {levelData.slice(31, 35).map((level) => {
-          return (
-            <Grid key={level.map_name} item>
-              <ChamberCard
-                level_id={level.scores[0].map_id}
-                scores={level.scores}
-                image={imagePaths[level.scores[0].map_id]}
-                title={level.map_name}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
-
-      {/*---------------Chapter 06------------------*/}
-      <div className={classes.chapter_title_container}>
-        <Typography
-          variant="h6"
-          component="h1"
-          className={classes.chapter_number}
-        >
-          Chapter 06
-        </Typography>
-        <Typography
-          variant="h4"
-          component="h1"
-          className={classes.chapter_name}
-        >
-          THE FALL
-        </Typography>
-      </div>
-      <Grid
-        container
-        spacing={2}
-        direction="row"
-        className={classes.chapter_container}
-      >
-        {levelData.slice(35, 41).map((level) => {
-          return (
-            <Grid key={level.map_name} item>
-              <ChamberCard
-                level_id={level.scores[0].map_id}
-                scores={level.scores}
-                image={imagePaths[level.scores[0].map_id]}
-                title={level.map_name}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
-
-      {/*---------------Chapter 07------------------*/}
-      <div className={classes.chapter_title_container}>
-        <Typography
-          variant="h6"
-          component="h1"
-          className={classes.chapter_number}
-        >
-          Chapter 07
-        </Typography>
-        <Typography
-          variant="h4"
-          component="h1"
-          className={classes.chapter_name}
-        >
-          THE REUNION
-        </Typography>
-      </div>
-      <Grid
-        container
-        spacing={2}
-        direction="row"
-        className={classes.chapter_container}
-      >
-        {levelData.slice(41, 45).map((level) => {
-          return (
-            <Grid key={level.map_name} item>
-              <ChamberCard
-                level_id={level.scores[0].map_id}
-                scores={level.scores}
-                image={imagePaths[level.scores[0].map_id]}
-                title={level.map_name}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
-
-      {/*---------------Chapter 08------------------*/}
-      <div className={classes.chapter_title_container}>
-        <Typography
-          variant="h6"
-          component="h1"
-          className={classes.chapter_number}
-        >
-          Chapter 08
-        </Typography>
-        <Typography
-          variant="h4"
-          component="h1"
-          className={classes.chapter_name}
-        >
-          THE ITCH
-        </Typography>
-      </div>
-      <Grid
-        container
-        spacing={2}
-        direction="row"
-        className={classes.chapter_container}
-      >
-        {levelData.slice(45, 56).map((level) => {
-          return (
-            <Grid key={level.map_name} item>
-              <ChamberCard
-                level_id={level.scores[0].map_id}
-                scores={level.scores}
-                image={imagePaths[level.scores[0].map_id]}
-                title={level.map_name}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
-
-      {/*---------------Chapter 09------------------*/}
-      <div className={classes.chapter_title_container}>
-        <Typography
-          variant="h6"
-          component="h1"
-          className={classes.chapter_number}
-        >
-          Chapter 09
-        </Typography>
-        <Typography
-          variant="h4"
-          component="h1"
-          className={classes.chapter_name}
-        >
-          THE PART WHERE...
-        </Typography>
-      </div>
-      <Grid
-        container
-        spacing={2}
-        direction="row"
-        className={classes.chapter_container}
-      >
-        {levelData.slice(56).map((level) => {
-          return (
-            <Grid key={level.map_name} item>
-              <ChamberCard
-                level_id={level.scores[0].map_id}
-                scores={level.scores}
-                image={imagePaths[level.scores[0].map_id]}
-                title={level.map_name}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
+          </div>
+        )
+      }
+      )}
     </div>
-  );
+  )
 }
 
 export default SinglePlayer;
