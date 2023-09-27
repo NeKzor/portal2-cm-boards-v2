@@ -13,7 +13,7 @@ function ChamberCard({data, image, title}) {
   return (
     <Card className={classes.chamber_card}>
       <CardActionArea>
-        <Link to={`/sp/${data.map_id}`}>
+        <Link to={`/sp/${data[0].map_id}`}>
           <CardMedia
             className={classes.chamber_img}
             image={image}
