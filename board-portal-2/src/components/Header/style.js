@@ -1,55 +1,36 @@
 import { makeStyles, withStyles } from "@material-ui/core/styles"
-import { Button } from "@material-ui/core"
+import navBackground from "./img/navDarkBackground.jpg"
 
-export const CustomButton = withStyles({
-  root: {
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"'
-    ].join(",")
-  }
-})(Button)
-
-export const useStyles = makeStyles(theme => ({
+export const useStyles = makeStyles((theme) => ({
   root: {},
+  appBar:{
+    background: `linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%), url(${navBackground}) repeat fixed`,
+    backgroundSize: 'auto 6%',
+  },
   toolbar: {
-    minHeight: "8.033em",
-    alignItems: "flex-start",
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(2)
+    minHeight: "5em",
+    maxHeight: "8em",
   },
   title: {
-    flexGrow: 1,
-    alignSelf: "auto",
-    paddingBottom: "1em"
-  },
-  headerLinks: {
-    // width: "100%"
   },
   steam: {
     justifyContent: "flex-end",
     alignSelf: "center",
     "& div": {
       fontSize: "1.25rem",
-      padding: ".5em"
-    }
+      padding: ".5em",
+    },
+  },
+  navButton: {
+    fontSize: "1rem",
   },
   icon: {
-    height: "1.56em",
-    paddingLeft: "0.5em",
-    paddingRight: "0.5em"
+    height: "0.8em",
   },
-  iconMenu: {
-    height: "1.56em",
-    width: "1.56em"
+  moreIcon: {
+    height: "0.25em",
   },
-  dropdown: {}
-}))
+  logo: {
+    height: "4em",
+  },
+}));
