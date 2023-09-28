@@ -8,29 +8,29 @@ export const useStyles = makeStyles((theme) => ({
     backgroundSize: 'auto 6%',
   },
   toolbar: {
-    minHeight: "5em",
-    maxHeight: "8em",
+    height: '100px'
   },
   title: {
+    fontSize: "2em",
+  },
+  subTitle: {    
+    fontSize: "1.5em",
+  },
+  logoGrid: {
   },
   steam: {
-    justifyContent: "flex-end",
-    alignSelf: "center",
-    "& div": {
-      fontSize: "1.25rem",
-      padding: ".5em",
-    },
+    fontSize: "1.5em",
   },
-  navButton: {
-    fontSize: "1rem",
+  navButtonText: {
+    fontSize: "1.1rem",
   },
   icon: {
-    height: "0.8em",
+    height: "1.2em",
   },
   moreIcon: {
-    height: "0.25em",
+    height: "0.3em",
   },
   logo: {
-    height: "4em",
+    height: "5em",
   },
 }));

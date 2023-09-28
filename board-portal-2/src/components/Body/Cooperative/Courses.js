@@ -1,4 +1,4 @@
-import imagePaths from "../SinglePlayer/ChamberImages";
+import imagePaths from "../Images/chambers/Coop_Chamber_Images";
 
 const courses = {
   course_1: [
@@ -250,7 +250,7 @@ const courses = {
       id: 49341,
       title: "Separation",
       chapter_name: "Art Therapy",
-      image: imagePaths[47783],
+      image: imagePaths[49341],
     },
     {
       id: 49343,

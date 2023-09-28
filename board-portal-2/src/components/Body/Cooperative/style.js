@@ -54,7 +54,8 @@ export const useStyles = makeStyles(theme => ({
     width: "50%",
     color: "black",
     backgroundColor: "#dbdbdb",
-    padding: "0px 10px 0px 10px"
+    whiteSpace : "nowrap",
+    padding: "0px 20px 0px 10px"
   },
   level_title_helper: {
     position: "absolute",
@@ -67,6 +68,11 @@ export const useStyles = makeStyles(theme => ({
   },
   first_place: {
     backgroundColor: theme.palette.background.default,
-    width: "100%"
-  }
+    width: "100%",
+    marginTop: -5,
+    marginBottom: -5,
+  },
+  firstPlaceText:{
+      fontWeight: "bolder",
+  },
 }))

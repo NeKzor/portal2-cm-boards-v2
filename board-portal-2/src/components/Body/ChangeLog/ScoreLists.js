@@ -1,18 +1,12 @@
 import {
-  Avatar,
-  Divider,
-  IconButton,
   List,
   ListItem,
-  ListItemAvatar,
   ListItemSecondaryAction,
   ListItemText
 } from "@material-ui/core"
-import { YouTube, GetApp, ChatBubble } from "@material-ui/icons"
-import React, { isValidElement } from "react"
 import { useStyles } from "./style"
 import ScoreListItem from "./ScoreListItem"
-import chapters from "./Chapters"
+import React from "react"
 
 function ScoreLists(props) {
   const classes = useStyles()
@@ -20,21 +14,17 @@ function ScoreLists(props) {
   var theme = props.theme
   var changelogData = props.changelogData
   var themeStatus = props.themeStatus
+  console.log(changelogData)
   return (
     <List dense={true} style={{ paddingRight: "2em", width: "100%" }}>
       <ListItem>
-        <ListItemText primary='Date' style={{ width: "7.67em" }} />
-        <ListItemAvatar>
-          <Avatar></Avatar>
-        </ListItemAvatar>
-        <ListItemText primary='Player' className={classes.cellPlayer} />
-        <ListItemText primary='Map' />
-        <ListItemText primary='Chapter' />
+        <ListItemText primary='Map'/>
+        <ListItemText primary='Player'/>
         <ListItemText primary='Previous Score' />
-        <ListItemText primary='' />
         <ListItemText primary='New Score' />
-        <ListItemText primary='' />
         <ListItemText primary='Improvement' />
+        <ListItemText primary='ΔPoints'/>
+        <ListItemText primary='Date' style={{ width: "7.67em" }} />
         <ListItemSecondaryAction></ListItemSecondaryAction>
       </ListItem>
 

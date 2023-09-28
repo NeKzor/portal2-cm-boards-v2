@@ -16,7 +16,7 @@ function ChamberCard({data, image, title}) {
           <CardMedia
             className={classes.chamber_img}
             image={image}
-            title="Container Ride"
+            title={title}
           />
         </Link>
       </CardActionArea>
@@ -24,10 +24,10 @@ function ChamberCard({data, image, title}) {
       <div className={classes.level_title}>{title}</div>
       <CardContent className={classes.first_place}>
         <Grid container direction="row" justifyContent="space-between">
-          <Typography variant="body2">
+          <Typography variant="body2" className={classes.firstPlaceText}>
             {`${data[0].user_name1} & ${data[0].user_name2}`}
           </Typography>
-          <Typography variant="body2">{data[0].score}</Typography>
+          <Typography variant="body2" className={classes.firstPlaceText}>{data[0].score}</Typography>
         </Grid>
       </CardContent>
       {data.map((score, i) => {
@@ -46,6 +46,7 @@ function ChamberCard({data, image, title}) {
             </CardContent>
           );
         }
+        else{return (<div className="No Data Sent"></div>)}
       })}
     </Card>
   );

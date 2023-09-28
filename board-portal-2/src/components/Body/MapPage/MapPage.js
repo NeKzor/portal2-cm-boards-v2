@@ -27,28 +27,29 @@ function MapPage({ match }) {
   }, []);
 
   return (
-    <Grid container justify="center">
+    <Grid container justifyContent="center">
+      <Grid item xs={12} sm={9} md={8} lg={7}>
       <Grid
-        className={classes.pageContainer}
         container
-        direction="column"
+        className={classes.pageContainer}
+        direction="row"
         alignItems="center"
-        xs={12}
-        md={6}
+        
       >
-        <Grid item xs={12}>
+        <Grid item>
           <Header
             mapName={SingleChapters[match.params.map_id].title}
             chapterName={SingleChapters[match.params.map_id].chapter_name}
             image={SingleChapters[match.params.map_id].image}
           />
         </Grid>
-        <Grid className={classes.scores} item xs={12}>
+        <Grid item className={classes.scores}>
           <Scores
             mapData={mapData}
             mapType={match.url.indexOf("sp") > -1 ? "sp" : "coop"}
           />
         </Grid>
+      </Grid>
       </Grid>
     </Grid>
   );
