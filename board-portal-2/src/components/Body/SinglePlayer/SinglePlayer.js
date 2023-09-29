@@ -23,7 +23,6 @@ function SinglePlayer() {
     };
     fetchData()
   }, []);
-
   let dataIndex = {}
   levelData.forEach((value,index) => {dataIndex[value[0].map_id] = index });
   return (

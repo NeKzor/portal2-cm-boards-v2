@@ -36,21 +36,21 @@ const ChangeLog = () => {
     <Paper id='ChangeLog' className={classes.bodyPage}>
       <Grid container direction='column'>
 
-        <Grid item style={{ paddingRight: "2em", paddingTop: "2em" }}>
+        {/* <Grid item style={{ paddingRight: "2em", paddingTop: "2em" }}>
           <Filters
             themeStatus={themeContext.themeStatus}
             theme={themeContext.theme}
             onChangeFilters={handleChangeFilters}
           />
-        </Grid>
+        </Grid> */}
 
-        <Grid item>
+        {/* <Grid item>
           <Graph
             themeContext={themeContext}
             filters={filters}
             changelogData={changelogData}
           />
-        </Grid>
+        </Grid> */}
 
         <Grid item>
           <ScoreLists

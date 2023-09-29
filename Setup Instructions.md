@@ -36,8 +36,9 @@
 - Start up Postgres
     - `sudo service postgresql start`
 - Database Creation
+    - *Make sure to include the semi-colon at the end of each line that has them it should output CREATED USER or ALTERED USER after*
     - `sudo -u postgres psql template1` 
-	- `CREATE USER `**USERNAME**;
+	- `CREATE USER `**USERNAME**`;`
 	- `ALTER USER `**USERNAME**` with encrypted password '123';` 
 	- `ALTER USER `**USERNAME**` WITH SUPERUSER;`
 	- `\q`
@@ -79,6 +80,10 @@
     - *Do not replace this with your linux username, it's the username you used for creating the database*
     - DATABASE_URL=postgresql://**USERNAME**:**PASSWORD**@localhost:5432/p2boards
 	- Set STEAM.API_KEY (Technically not required) can get one [Here](https://steamcommunity.com/dev/apikey) 
+
+# Setting up the Frontend
+- Install everything
+    - `npm install`
 
 # Fin
 - Running the Frontend
