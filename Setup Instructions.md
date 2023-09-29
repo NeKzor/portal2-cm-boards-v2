@@ -60,11 +60,7 @@
 <br/>
 
 # Import Testing Data into Database
-- Download Example Database
-    - Available [Here](https://drive.google.com/file/d/1PJRp_amgzV0y47O4N2k_qGRvIRi5AjGz/view?usp=sharing)
-- Create the directory for the database
-    - `mkdir portal2-cm-boards-v2/db/dbdump`
-- Moving to the directory forthe database
+- Moving to the directory for the database dump
     - `cd portal2-cm-boards-v2/db/dbdump`
 - Put the contents of the file into the Database 
     - `psql p2boards < 2023.9.23_Pg_Dump.sql`
@@ -83,7 +79,8 @@
 
 # Setting up the Frontend
 - Install everything
-    - `npm install`
+    - *Move into the frontend folder (board-portal-2)*
+        - `npm install`
 
 # Fin
 - Running the Frontend
