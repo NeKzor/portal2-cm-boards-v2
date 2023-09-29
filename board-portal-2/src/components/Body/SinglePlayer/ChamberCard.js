@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { useStyles } from "./style";
 import { Link } from "react-router-dom";
+import getScoreFromString from "../../../Utils/timeutils"
 
 function ChamberCard({data, image, title}) {
   const classes = useStyles();
@@ -27,25 +28,26 @@ function ChamberCard({data, image, title}) {
           <Typography variant="body2" className={classes.firstPlaceText}>
             {data[0].user_name}
           </Typography>
-          <Typography variant="body2" className={classes.firstPlaceText}>{data[0].score}</Typography>
+          <Typography variant="body2" className={classes.firstPlaceText}>{getScoreFromString(data[0].score)}</Typography>
         </Grid>
       </CardContent>
       {data.map((score, i) => {
         if (i > 0) {
           return (
             <CardContent
-              key={score.score + score.user_name}
+              key={score.score + score.user_name + title}
               className={classes.card_content}
             >
               <Grid container direction="row" justifyContent="space-between">
                 <Typography variant="caption">
                   {score.user_name}
                 </Typography>
-                <Typography variant="caption">{score.score}</Typography>
+                <Typography variant="caption">{getScoreFromString(score.score)}</Typography>
               </Grid>
             </CardContent>
           );
         }
+        else {return <div key= "No data sent" className="No Data Sent"></div>}
       })}
     </Card>
   );

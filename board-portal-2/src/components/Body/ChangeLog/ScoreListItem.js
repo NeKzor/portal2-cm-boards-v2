@@ -1,17 +1,9 @@
-import {
-  Avatar,
-  Divider,
-  IconButton,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemSecondaryAction,
-  ListItemText
-} from "@material-ui/core"
+import { Avatar, IconButton, ListItem, ListItemAvatar, ListItemSecondaryAction, ListItemText } from "@material-ui/core"
 import { YouTube, GetApp, ChatBubble } from "@material-ui/icons"
-import React, { isValidElement } from "react"
+import React from "react"
 import { useStyles } from "./style"
 import chapters from "./Chapters"
+import getScoreFromString from "../../../Utils/timeutils"
 
 function ScoreListItem({ theme, themeStatus, submission, index }) {
     const classes = useStyles()
@@ -39,7 +31,7 @@ function ScoreListItem({ theme, themeStatus, submission, index }) {
             />
             <ListItemText
                 className={classes.cellMap}
-                primary={mapID != 47846 ? chapters[mapID].title : "DNE"}
+                primary={mapID !== 47846 ? chapters[mapID].title : "DNE"}
             />
             <ListItemText
                 className={classes.cellChapter}
@@ -51,7 +43,7 @@ function ScoreListItem({ theme, themeStatus, submission, index }) {
             />
             <ListItemText
                 className={classes.cellPS}
-                primary={submission.score ? submission.score : "-"}
+                primary={submission.score ? getScoreFromString(submission.score) : "-"}
             />
             <ListItemText
                 className={classes.cellNR}
@@ -59,7 +51,7 @@ function ScoreListItem({ theme, themeStatus, submission, index }) {
             />
             <ListItemText
                 className={classes.cellNS}
-                primary={submission.score ? submission.score : "-"}
+                primary={submission.score ? getScoreFromString(submission.score) : "-"}
             />
             <ListItemText
                 className={classes.cellImprovement}

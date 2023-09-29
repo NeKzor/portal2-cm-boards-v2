@@ -1,6 +1,7 @@
 import Typography from "@material-ui/core/Typography";
 import { useStyles } from "./style";
 import Grid from "@material-ui/core/Grid";
+import getScoreFromString from "../../../Utils/timeutils"
 
 function Score({ rank, avatar, name, time, score }) {
   const classes = useStyles();
@@ -65,7 +66,7 @@ function Score({ rank, avatar, name, time, score }) {
           variant="body1"
           component="span"
         >
-          {score}
+          {getScoreFromString(score)}
         </Typography>
       </Grid>
       </Grid>

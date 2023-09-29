@@ -11,7 +11,6 @@ function SinglePlayer() {
   const classes = useStyles();
   const [levelData, setLevelData] = useState([]);
 
-  //fetching level data on first component load
   useEffect(() => {
     const fetchData = async () => {
       try {
