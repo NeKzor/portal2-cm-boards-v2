@@ -5,16 +5,16 @@ import { useMediaQuery, Box } from "@material-ui/core";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Changelog from "./components/Body/ChangeLog/ChangeLog";
-import About from "./components/Body/About/About";
-import WallOfShame from "./components/Body/Wall_of_Shame/WallOfShame";
+import About from "./components/Body/Misc/About/About";
+import WallOfShame from "./components/Body/Misc/Wall_of_Shame/WallOfShame";
 import Error from "./components/Error";
-import Donators from "./components/Body/Donators/Donators";
-import SinglePlayer from "./components/Body/SinglePlayer/SinglePlayer";
-import Cooperative from "./components/Body/Cooperative/Cooperative";
+import Donators from "./components/Body/Misc/Donators/Donators";
+import SinglePlayer from "./components/Body/Games/Portal 2/SinglePlayer/SinglePlayer";
+import Cooperative from "./components/Body/Games/Portal 2/Cooperative/Cooperative";
 import { useStyles } from "./style.js";
-import AggregatedSelector from "./components/Body/Aggregated_Selector/AggregatedSelector";
-import AggregatedOverall from "./components/Body/Aggregated_Overall/AggregatedOverall";
-import MapPage from "./components/Body/MapPage/MapPage";
+import AggregatedSelector from "./components/Body/Aggregates/Aggregated_Selector/AggregatedSelector";
+import AggregatedOverall from "./components/Body/Aggregates/Aggregated_Overall/AggregatedOverall";
+import MapPage from "./components/Body/MapPages/MapPage";
 
 export const ThemeContext = React.createContext({});
 

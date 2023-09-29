@@ -1,18 +1,8 @@
 import { div } from "@material-ui/core"
 import React from "react"
-import { ThemeContext } from "../../../App"
+import { ThemeContext } from "../../../../App"
 import "./about.css"
 import { useStyles } from "./style"
-/**
- * @name - About
- * @desc - Page for the "about" section. Contains formula for calculating
- *         top 200 times and a table containing an example top 200 times.
- * @author - Mitchell Baker
- * @date - 3/17/21
- * @version - 1.0
- * @param -
- * @return -
- */
 
 const About = () => {
   const classes = useStyles()
@@ -22,7 +12,7 @@ const About = () => {
       <h1 className={classes.aboutHeader}>About</h1>
       <h1 className={classes.aboutSubHeader}>Rules & Console Commands</h1>
       <div className={classes.aboutText}>
-        For rules and console commands, go <a>here</a>.
+        For rules and console commands, go <a href="https://rules.portal2.sr/">here</a>.
       </div>
       <h1 className={classes.aboutSubHeader}>Point Calculation</h1>
       <div className={classes.aboutText}>
@@ -114,10 +104,13 @@ const About = () => {
       <h1 className={classes.aboutSubHeader}>Team</h1>
       <div className={classes.aboutTeamList}>
         <ul>
-          <li>Randy Savage</li>
-          <li>Randy Savage</li>
-          <li>Randy Savage</li>
-          <li>Randy Savage</li>
+          <li>Jonese: Developer, Admin</li>
+          <li>Mlugg: Developer, Admin</li>
+          <li>Nekz: Developer, Admin</li>
+          <li>Betsruner: Developer, Admin</li>
+          <li>Daniel: Developer, Admin</li>
+          <li>Rex: Admin</li>
+          <li>Xinera: Admin</li>
         </ul>
       </div>
       <h1 className={classes.aboutSubHeader}>API</h1>
@@ -154,17 +147,6 @@ const About = () => {
             <td>C#</td>
           </tr>
         </table>
-      </div>
-      <h1 className={classes.aboutSubHeader}>Hosting</h1>
-      <div className={classes.aboutText}>
-        This site is currently hosted on FastComet. Demos are stored using
-      </div>
-      <div className={classes.aboutText}>
-        Google Drive. The folder containg all demos can be found here.
-      </div>
-      <h1 className={classes.aboutSubHeader}>Feature Suggestions</h1>
-      <div className={classes.aboutText}>
-        Forward any feature suggestions you may have to NeKz or iVerb.
       </div>
     </div>
   )

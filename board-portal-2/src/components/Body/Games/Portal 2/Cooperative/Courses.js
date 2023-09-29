@@ -1,4 +1,4 @@
-import imagePaths from "../Images/chambers/Coop_Chamber_Images";
+import imagePaths from "../../../Images/chambers_small/Coop_Small_Images";
 
 const courses = {
   course_1: [
