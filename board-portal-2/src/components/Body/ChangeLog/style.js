@@ -11,12 +11,14 @@ export const useStyles = makeStyles(theme => ({
     width: '100%',
     height: '100%',
     backgroundPosition: 'center',
-    objectFit: 'cover'
+    objectFit: 'cover',
+    margin : "0 0 0 10px",
   },
   chmbMapText:{
     fontSize : '1.2em',
     color: 'white',
     whiteSpace: 'noWrap',
+    margin : "0 0 0 10px",
   },
   teamGrid:{
 

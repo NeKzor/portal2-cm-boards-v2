@@ -26,11 +26,7 @@ function ScoreListItem({ theme, themeStatus, submission, index }) {
         </Grid>
 
         <Grid container item className={classes.teamGrid} xs={2} spacing={3} alignItems="center">
-            <Grid container item className={classes.player1Grid} xs={6} justifyContent="flex-start" alignItems="center">
-                <Avatar className={classes.playerAvatar} src={submission.avatar}></Avatar>
-                <Typography className={classes.playerText}> {submission.user_name}</Typography>
-            </Grid>
-            <Grid container item className={classes.player2Grid} xs={6} justifyContent="center" alignItems="center">
+            <Grid container item className={classes.player1Grid} xs={12} justifyContent="center" alignItems="center">
                 <Avatar className={classes.playerAvatar} src={submission.avatar}></Avatar>
                 <Typography className={classes.playerText}> {submission.user_name}</Typography>
             </Grid>
@@ -38,22 +34,22 @@ function ScoreListItem({ theme, themeStatus, submission, index }) {
 
         <Grid container item className={classes.rankGrid} xs={2} spacing={3} alignItems="center">
             <Grid container item className={classes.previousRankGrid} xs={5} justifyContent="flex-end">
-                    <Typography className={classes.rankText}> {submission.pre_rank} </Typography>
+                    <Typography className={classes.rankText}> {submission.pre_rank ? submission.pre_rank : "None"} </Typography>
             </Grid>
-            <Grid item xs={1}>
-                <Typography style={{color: 'white'}}> {">"} </Typography>
+            <Grid item xs='auto'>
+                <Typography style={{color: 'white'}}> {"→"} </Typography>
             </Grid>
             <Grid container item className={classes.newRankGrid} xs={5} justifyContent="flex-start">
-                    <Typography className={classes.rankText}> {submission.post_rank} </Typography>
+                    <Typography className={classes.rankText}> {submission.post_rank ? submission.post_rank : "None"} </Typography>
             </Grid>
         </Grid>
 
         <Grid container item className={classes.deltaGrid} xs={2} alignItems="center">
             <Grid item xs={4}>
-                <Typography style={{color: 'white'}}> {submission.post_rank - submission.pre_rank} </Typography>
+                <Typography style={{color: 'white'}}> {submission.pre_rank ? submission.post_rank - submission.pre_rank : "New!"} </Typography>
             </Grid>
             <Grid item xs={4}>
-                <Typography style={{color: 'white'}}> {"-" + getScoreFromString(submission.score_delta)} </Typography>
+                <Typography style={{color: 'white'}}> {submission.pre_rank ? "-" + getScoreFromString(submission.score_delta) : ""} </Typography>
             </Grid>
             <Grid item xs={4}>
                 <Typography style={{color: 'white'}}> {"+" + 15.73} </Typography>

@@ -36,7 +36,7 @@ function MapPage({ match }) {
         alignItems="center"
         
       >
-        <Grid item>
+        <Grid item xs={12}>
           <Header
             mapName={SingleChapters[match.params.map_id].title}
             chapterName={SingleChapters[match.params.map_id].chapter_name}

@@ -34,12 +34,15 @@ const ChangeLog = () => {
   }
 
   return (
+    <Grid container style={{marginTop: '20px'}}>
           <ScoreLists 
           filters={filters}
           changelogData={changelogData}
           themeStatus = {themeContext.themeStatus}
           theme={themeContext.theme}
+          className={classes.changelogGrid}
           />
+    </Grid>
   )
 }
 

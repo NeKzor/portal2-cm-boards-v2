@@ -24,7 +24,7 @@ function Header({ mapName, chapterName, image }) {
       <Typography className={classes.headerMapText} variant="h4" component="h2">
         {mapName.toUpperCase()}
       </Typography>
-      <img style={{ width: "100%" }} src={image} alt="level art"></img>
+      <img style={{ width: "100%", height: 'auto' }} src={image} alt="level art"></img>
     </Grid>
   );
 }
