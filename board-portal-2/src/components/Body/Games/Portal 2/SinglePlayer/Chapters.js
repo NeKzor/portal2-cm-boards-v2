@@ -1,4 +1,4 @@
-import imagePaths from "../../../Images/chambers_small/SP_Small_Images";
+import imagePaths from "../../../Images/chambers_small/Chambers_Small";
 
 const chapters = {
     chapter_1:  [

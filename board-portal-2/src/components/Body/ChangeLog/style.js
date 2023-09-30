@@ -1,46 +1,41 @@
 import { makeStyles, withStyles } from "@material-ui/core/styles"
+import { Translate } from "@material-ui/icons"
 
 export const useStyles = makeStyles(theme => ({
   root: {},
-  bodyPage: {
-    margin: "4%",
-    paddingTop: "0.5em",
-    paddingLeft: "2em",
-    paddingBottom: "56px"
-    // height: "100vh"
+  chmbImageGrid: {
+      overflow: 'hidden',
+      height: '2.75em',
   },
-  cellDate: {
-    width: "10.625em"
+  chmbImage:{
+    width: '100%',
+    height: '100%',
+    backgroundPosition: 'center',
+    objectFit: 'cover'
   },
-  cellPlayer: {
-    maxWidth: "15em",
-    minWidth: "15em"
+  chmbMapText:{
+    fontSize : '1.2em',
+    color: 'white',
+    whiteSpace: 'noWrap',
   },
-  cellMap: {
-    width: "7.5em"
+  teamGrid:{
+
   },
-  cellChapter: {
-    width: "10.5em"
+  player1Grid:{
+
   },
-  cellPR: {
-    width: "3.5em",
+  player2Grid:{
+
   },
-  cellPS: {
-    width: "7.5em",
+  playerText:{
+    color: 'white',
+    margin: '0 0 0 0.5em'
   },
-  cellNR: {
-    width: "3.5em",
+  playerAvatar:{
+    height: '1.4em',
+    width: '1.4em',
   },
-  cellNS: {
-    width: "7.5em"
+  rankText:{
+    color: 'white',
   },
-  cellImprovement: {
-    width: "7.5em"
-  },
-  textField: { margin: ".5em" },
-  buttonMenu: {},
-  menu: {},
-  menuItem: {},
-  checkbox: {},
-  apply: {}
 }))

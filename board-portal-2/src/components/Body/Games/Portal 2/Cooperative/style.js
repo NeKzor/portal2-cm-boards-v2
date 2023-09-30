@@ -18,7 +18,8 @@ export const useStyles = makeStyles(theme => ({
   },
   chapter_name: {
     color: "white",
-    marginTop: -2
+    marginTop: -2,
+    marginBottom : 15,
   },
   chapter_container: {
     maxWidth: "100%",

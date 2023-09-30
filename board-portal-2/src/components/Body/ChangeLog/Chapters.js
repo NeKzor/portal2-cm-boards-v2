@@ -443,8 +443,8 @@ const chapters = {
     chapter_name: "Mass and Velocity"
     //image: imagePaths[47845],
   },
-  47849: {
-    id: 47849,
+  47848: {
+    id: 47848,
     title: "Cooperative Bridges",
     chapter_name: "Hard Light"
     //image: imagePaths[47849],
