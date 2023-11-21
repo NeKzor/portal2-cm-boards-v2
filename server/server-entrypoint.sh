@@ -6,7 +6,6 @@ function timed_echo () {
 
 timed_echo "Entrypoint Script Started"
 cd $PATH_TO_VOLUME
-cargo install cargo-watch && cargo build &
 
 if [ "$DATABASE" = "postgres" ]
 then

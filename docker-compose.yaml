@@ -12,11 +12,6 @@ services:
       - type: bind
         source: ./server
         target: /opt/server
-      - type: volume
-        source: cargo_home
-        target: /opt/cargo
-
-
   postgres:
     build: ./db
     environment:
@@ -24,8 +19,4 @@ services:
       - POSTGRES_PASSWORD=docker
       - POSTGRES_USER=docker
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
-
-volumes:
-  cargo_home:
-  postgres_data:
+      - ./postgres_data:/var/lib/postgresql/data/
