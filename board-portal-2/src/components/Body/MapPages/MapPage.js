@@ -5,7 +5,7 @@ import SingleChapters from "./Chapters";
 import Header from "./Header";
 import Scores from "./Scores";
 
-const ENDPOINT = "http://localhost:8080/api/v1/map";
+const ENDPOINT = "/api/v1/map";
 
 function MapPage({ match }) {
   const [mapData, setMapData] = useState([]);

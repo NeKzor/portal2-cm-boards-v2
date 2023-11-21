@@ -8,7 +8,7 @@ import Filters from "./Filters"
 import { ThemeContext } from "../../../App.js"
 import ImagePaths from "../Images/chambers_large/Chambers_Large.js"
 
-const ENDPOINT = "http://localhost:8080/api/v1/changelog"
+const ENDPOINT = "/api/v1/changelog"
 
 const ChangeLog = () => {
   const classes = useStyles()

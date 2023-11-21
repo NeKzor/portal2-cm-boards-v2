@@ -5,7 +5,7 @@ import ChamberCard from "./ChamberCard";
 import Typography from "@material-ui/core/Typography";
 import Sections from "./Courses"
 
-const ENDPOINT = "http://localhost:8080/api/v1/coop";
+const ENDPOINT = "/api/v1/coop";
 
 function Cooperative() {
   const classes = useStyles();

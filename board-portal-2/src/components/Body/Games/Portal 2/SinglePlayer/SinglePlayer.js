@@ -5,7 +5,7 @@ import ChamberCard from "./ChamberCard";
 import Typography from "@material-ui/core/Typography";
 import Sections from "./Chapters.js"
 
-const ENDPOINT = "http://localhost:8080/api/v1/sp";
+const ENDPOINT = "/api/v1/sp";
 
 function SinglePlayer() {
   const classes = useStyles();
