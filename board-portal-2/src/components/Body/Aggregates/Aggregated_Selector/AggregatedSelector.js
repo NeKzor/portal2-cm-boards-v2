@@ -14,8 +14,8 @@ const AggregatedSelector = () => {
       <Grid
         container
         direction='column'
-        justifyContent='space-around'
-        alignItems='center'>
+        justify='space-around'
+        alignitems='center'>
         <Grid item className={classes.cards}>
           <ButtonBase focusRipple className={classes.image} href='/agg-overall'>
             <span

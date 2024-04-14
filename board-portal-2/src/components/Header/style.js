@@ -8,10 +8,15 @@ export const useStyles = makeStyles((theme) => ({
     backgroundSize: 'auto 6%',
   },
   toolbar: {
-    height: '100px'
+    minHeight: "8.033em",
+    alignitems: "flex-start",
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(2)
   },
   title: {
-    fontSize: "2em",
+    flexgrow: 1,
+    alignSelf: "auto",
+    paddingBottom: "1em"
   },
   subTitle: {    
     fontSize: "1.5em",
@@ -19,10 +24,12 @@ export const useStyles = makeStyles((theme) => ({
   logoGrid: {
   },
   steam: {
-    fontSize: "1.5em",
-  },
-  navButtonText: {
-    fontSize: "1.1rem",
+    justifycontent: "flex-end",
+    alignSelf: "center",
+    "& div": {
+      fontSize: "1.25rem",
+      padding: ".5em"
+    }
   },
   icon: {
     height: "1.2em",

@@ -31,10 +31,10 @@ function MapPage({ match }) {
       <Grid item xs={12} sm={9} md={8} lg={7}>
       <Grid
         container
-        className={classes.pageContainer}
-        direction="row"
-        alignItems="center"
-        
+        direction="column"
+        alignitems="center"
+        xs={12}
+        md={6}
       >
         <Grid item xs={12}>
           <Header
