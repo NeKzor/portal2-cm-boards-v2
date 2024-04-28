@@ -8,8 +8,8 @@ import HistoryIcon from '@mui/icons-material/History';
 import ScoreEntries from '../../components/ScoreEntries'
 import ScoreGraph from '../../components/ScoreGraph'
 
-const CHANGELOG_ENDPOINT = "http://localhost:8080/api/v1/changelog"
-const GRAPH_ENDPOINT = "http://localhost:8080/api/v1/graph"
+const CHANGELOG_ENDPOINT = "/api/v1/changelog"
+const GRAPH_ENDPOINT = "/api/v1/graph"
 
 
 const ScoreUpdates = () => {
